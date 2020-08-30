@@ -37,7 +37,8 @@ var UsersSchema = new Schema({
     type: String
       },
   username: {
-    type: String
+    type: String,
+    unique:true
   },
   
   password: {
@@ -58,22 +59,37 @@ var model = mongo.model('users_poc', UsersSchema, 'users_poc');
 
 app.post("/api/SaveUser", function (req, res) {
   var mod = new model(req.body);
-  if (req.body.mode == "Save") {
-    mod.save(function (err, data) {
-      if (err) {
-        res.send(err);
-      } else {
-        res.send({
-          data: "Record has been Inserted..!!"
-        });
-      }
-    });
-  } 
+  model.findOne({email:req.body.email}, function (err, data) {
+    if (err) {
+      res.send({
+        data: "Name is there already"
+      });
+    }
+    else if (data){
+      res.send({
+        data: "Record is there already"
+      });
+    } else {
+      mod.save(function (err, data) {
+        if (err) {
+          res.send({
+            data: "Name is there already"
+          });
+        } else {
+          res.send({
+            data: "Record has been Inserted..!!"
+          });
+        }
+      });
+    }
+  });
+  
 })
+
 
 app.post("/api/UpdateUser", function (req, res) {
   model.findByIdAndUpdate(req.body.id, {
-    fullname: req.body.fullname,
+    username: req.body.username,
     email:req.body.email,
     password: req.body.password,
     organization:req.body.organization

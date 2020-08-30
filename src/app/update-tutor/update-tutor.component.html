@@ -1,0 +1,110 @@
+
+<head>
+    
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/assets/assets/css/main.css">
+    <!--===============================================================================================-->
+    </head>
+    
+        <div class="container-contact100" style="background-image: linear-gradient(orange, white);">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form" >
+                    <span class="contact100-form-title" style="color:black" >
+                        Update Your Profile 
+                    </span>
+                    <label><i class="fa fa-2x fa-address-card-o" aria-hidden="true"></i>  Full Name:</label>
+                    <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                        <input class="input100" type="text" [(ngModel)]="Repdata.fullname" name="fullname" placeholder="Full Name">
+                        
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label> <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>  Email Address:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
+                        <input class="input100" type="email" [(ngModel)]="Repdata.email" name="email" placeholder="E-mail">
+                        
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                        
+                    </div>
+                    <label><i class="fa fa-2x fa-user-circle" aria-hidden="true"></i>  Username:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please enter your username">
+						<input type="text"  name="username" placeholder="username" [(ngModel)]="Repdata.username" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label><i class="fa fa-2x fa-lock" aria-hidden="true"></i>  Password:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter your password">
+						<input type="password" [(ngModel)]="Repdata.password" name="password" placeholder="password" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+					</div>
+					
+                    <label> <i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i>  LinkedIn Profile URL:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter your linkedIn URL">
+						<input type="text" [(ngModel)]="Repdata.linkedin" name="linkedin" placeholder="Linkedin" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label><i class="fa fa-2x fa-twitter" aria-hidden="true"></i>  Twitter Username:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter your twitter username">
+                        <input class="input100" type="text" [(ngModel)]="Repdata.twitter" name="twitter" placeholder="Twitter"  class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label> <i class="fa fa-2x fa-wordpress" aria-hidden="true"></i>  Blogger URL:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter your blog name">
+						<input type="text" placeholder="Blog"  [(ngModel)]="Repdata.blog" name="blog" class="input100">
+                            <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+					</div>
+					
+    
+                    <!--div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
+                        <input class="input100" type="text" name="phone" placeholder="Phone">
+                        <span class="focus-input100"></span>
+                    </div-->
+    
+                    
+    
+                    <div class="container-contact100-form-btn">
+                        <button class="contact100-form-btn" (click) = "Update()" value={{valbutton}}>
+                            <span>
+                                <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                                Update
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    
+    
+    <!--===============================================================================================-->
+        
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/bootstrap/js/popper.js"></script>
+        <script src="/assets/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/daterangepicker/moment.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/js/main.js"></script>
+    
+    
+    

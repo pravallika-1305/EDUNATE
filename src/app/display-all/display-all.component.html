@@ -1,0 +1,289 @@
+<head>
+    <!-- Required meta tags -->
+  
+    <title>Profile</title>
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/slicknav.css">
+    <!-- Menu CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/menu_sideslide.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/slide-style.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/responsive.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css'>
+    <link rel="stylesheet" href="/assets/asset/style.css">
+  </head>
+
+  
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      
+  
+      <!-- Hero Area Start -->
+      <div id="hero-area" class="hero-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+              <div class="contents">
+                <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Welcome!</h5>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">{{Repdata.username}}</h2>
+                <!--p class="script-font wow fadeInUp" data-wow-delay="0.6s">Front-end Web Developer and Graphic Designer</p-->
+                <!--ul class="social-icon wow fadeInUp" data-wow-delay="0.8s"-->
+                  <!--li>
+                    <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+                  </li-->
+                  <!--li>
+                    <a class="twitter" href="{{Repdata.twitter}}"><i class="icon-social-twitter"></i></a>
+                  </li-->
+                  <!--li>
+                    <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+                  </li-->
+                  <!--li>
+                    <a class="linkedin" href="{{Repdata.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                  </li>
+                  <li>
+                    <a class="google" href="{{Repdata.blog}}"><i class="icon-social-youtube"></i></a>
+                  </li>
+                </ul-->
+                <!--div class="header-button wow fadeInUp" data-wow-delay="1s">
+                  <a href="#" class="btn btn-common">Get a Free Quote</a>
+                </div-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+  
+    </header>
+    <!-- Header Area wrapper End -->
+  
+    <!-- About Section Start -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+              <img class="img-fluid" src="/assets/asset/img/about/about-1.jpg" alt="">
+            </div>
+          </div> 
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">            
+              <div class="about-profile">
+                <ul class="admin-profile">
+                  <li><span class="pro-title" > Username </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.username}}</span></li>
+                  <li><span class="pro-title">Organization </span> <span class="pro-detail" style="font-size:25px;"> {{Repdata.organization}}</span></li>
+                  <li><span class="pro-title"> Email </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.email}}</span></li>
+                </ul>
+            </div>
+            <a (click)="edit()" class="btn btn-common"><i class="icon-pencil"></i> Edit Profile</a>
+            <!--a (click)="createSession()" class="btn btn-common"><i class="icon-plus"></i> Create Session</a-->
+            
+          </div>
+        </div>   
+      </div>
+    </div>
+  </section>
+    
+    <h2 style="color:#000;text-align:center;">Your Sessions</h2>
+    <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
+    <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
+        <div class="card" >
+            <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+            <div class="card-body text-center">
+                <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
+                <div class="card-text">{{session.description}}</div>
+            </div>
+            
+                <a (click)="AddtoCart(session)" class="btn btn-common btn-lg" style="width:100%"><i style="color:white;" class="icon-check"><span>&nbsp; Enroll</span></i></a>
+            
+            <div class="price_box d-flex flex-row align-items-center">
+                <div class="course_author_image">
+                    <img src="/assets/img/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+                </div>
+                <div class="course_author_name">{{session.tutorname}}</div>
+                <div class="course_price d-flex flex-column align-items-center justify-content-center"><span>{{session.seats}}</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Portfolio Section -->
+    <!--section id="portfolios" class="section-padding"-->
+      <!-- Container Starts -->
+      <!--div class="container">        
+        <h2 class="section-title wow flipInX" data-wow-delay="0.4s">My Remarkable Works</h2>
+        <div class="row">          
+          <div class="col-md-12"-->
+            <!-- Portfolio Controller/Buttons -->
+            <!--div class="controls text-center">
+              <a class="filter active btn btn-common" data-filter="all">
+                All 
+              </a>
+              <a class="filter btn btn-common" data-filter=".design">
+                Design 
+              </a>
+              <a class="filter btn btn-common" data-filter=".development">
+                Development
+              </a>
+              <a class="filter btn btn-common" data-filter=".print">
+                Print 
+              </a>
+            </div-->
+            <!-- Portfolio Controller/Buttons Ends-->
+                    
+          <!-- Portfolio Recent Projects -->
+          <!--div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-1.jpg" alt="" />  
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-1.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-2.jpg" alt=""/> 
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-2.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-3.jpg" alt=""/> 
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-3.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-4.jpg" alt="" /> 
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-4.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-5.jpg" alt="" /> 
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-5.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/img-6.jpg" alt=""/>
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="assets/img/gallery/img-6.jpg">
+                        <i class="icon-eye"></i>
+                      </a>
+                      <a class="link" href="#">
+                        <i class="icon-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div-->
+      <!-- Container Ends -->
+    <!--/section-->
+  
+  
+    <!-- Portfolio Section Ends --> 
+  
+    <!-- Counter Area End-->
+  
+    <!-- Contact Section Start -->
+    <!-- Contact Section End -->
+  
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="icon-arrow-up"></i>
+    </a>
+  
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/asset/js/jquery-min.js"></script>
+    <script src="/assets/asset/js/popper.min.js"></script>
+    <script src="/assets/asset/js/bootstrap.min.js"></script>
+    <script src="/assets/asset/js/jquery.mixitup.js"></script>
+    <script src="/assets/asset/js/jquery.counterup.min.js"></script>
+    <script src="/assets/asset/js/waypoints.min.js"></script>
+    <script src="/assets/asset/js/wow.js"></script>
+    <script src="/assets/asset/js/jquery.nav.js"></script>
+    <script src="/assets/asset/js/jquery.easing.min.js"></script>  
+    <script src="/assets/asset/js/nivo-lightbox.js"></script>
+    <script src="/assets/asset/js/jquery.slicknav.js"></script>
+    <script src="/assets/asset/js/main.js"></script>
+    <script src="/assets/asset/js/form-validator.min.js"></script>
+    <script src="/assets/asset/js/contact-form-script.min.js"></script>
+    <script src="/assets/asset/js/map.js"></script>
+      

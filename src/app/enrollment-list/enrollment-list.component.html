@@ -1,0 +1,63 @@
+
+<head>
+	<title>Enrollment List</title>
+
+<!--===============================================================================================-->	
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/assets/table/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/assets/table/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+	
+	<link rel="stylesheet" type="text/css" href="/assets/table/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+<br/>
+<br/>
+<br/>
+
+
+				<div class="table100 ver6 m-b-110">
+					<table data-vertable="ver6" >
+						<thead>
+							<tr class="row100 head">
+								<th class="column100 column1" data-column="column1">Name</th>
+								<th class="column100 column2" data-column="column2">Email</th>
+								<th class="column100 column3" data-column="column3">Seats Booked</th>
+								
+							</tr>
+						</thead>
+						<tbody *ngFor="let session of sessions | filter : term">
+							<tr class="row100" >
+								<td class="column100 column1" data-column="column1">{{session.pocname}}</td>
+								<td class="column100 column2" data-column="column2">{{session.email}}</td>
+								<td class="column100 column3" data-column="column3">{{session.seats}}</td>
+								<div class="container" style="display:none;">{{session.orderedby}}</div>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+	
+
+
+	
+
+<!--===============================================================================================-->	
+<!--===============================================================================================-->
+	<script src="/assets/table/vendor/bootstrap/js/popper.js"></script>
+	<script src="/assets/table/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/assets/table/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/assets/table/js/main.js"></script>
+
+</body>

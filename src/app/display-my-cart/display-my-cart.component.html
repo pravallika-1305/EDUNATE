@@ -1,0 +1,75 @@
+<head>
+    <!-- Required meta tags -->
+  
+    <title>Profile</title>
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/slicknav.css">
+    <!-- Menu CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/menu_sideslide.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/slide-style.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/asset/css/responsive.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css'>
+    <link rel="stylesheet" href="/assets/asset/style.css">
+  </head>
+    
+    <h2 style="color:#000;text-align:center;">Enrolled Sessions</h2>
+    <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
+    <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
+        <div class="card">
+            <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+            <div class="card-body text-center">
+                <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
+                <div class="card-text">{{session.description}}</div>
+                <div style="display:none;">{{session.pocname}}</div>
+            </div>
+            
+                <!--a (click)="AddtoCart(session)" class="btn btn-common btn-lg" style="width:100%"><i style="color:white;" class="icon-check"><span>&nbsp; Enroll</span></i></a-->
+            
+            <div class="price_box d-flex flex-row align-items-center">
+                <div class="course_author_image">
+                    <img src="/assets/img/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+                </div>
+                <div class="course_author_name">{{session.tutorname}}</div>
+                <div class="course_price d-flex flex-column align-items-center justify-content-center"><span>{{session.seats}}</span></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <a href="#" class="back-to-top">
+      <i class="icon-arrow-up"></i>
+    </a>
+  
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/asset/js/jquery-min.js"></script>
+    <script src="/assets/asset/js/popper.min.js"></script>
+    <script src="/assets/asset/js/bootstrap.min.js"></script>
+    <script src="/assets/asset/js/jquery.mixitup.js"></script>
+    <script src="/assets/asset/js/jquery.counterup.min.js"></script>
+    <script src="/assets/asset/js/waypoints.min.js"></script>
+    <script src="/assets/asset/js/wow.js"></script>
+    <script src="/assets/asset/js/jquery.nav.js"></script>
+    <script src="/assets/asset/js/jquery.easing.min.js"></script>  
+    <script src="/assets/asset/js/nivo-lightbox.js"></script>
+    <script src="/assets/asset/js/jquery.slicknav.js"></script>
+    <script src="/assets/asset/js/main.js"></script>
+    <script src="/assets/asset/js/form-validator.min.js"></script>
+    <script src="/assets/asset/js/contact-form-script.min.js"></script>
+    <script src="/assets/asset/js/map.js"></script>
+      

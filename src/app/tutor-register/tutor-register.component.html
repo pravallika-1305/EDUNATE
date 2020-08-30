@@ -1,0 +1,77 @@
+	<head>
+		<meta charset="utf-8">
+		<title>Tutor Register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/assets/styles/style.css">
+
+		
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('/assets/img/login.jpg');padding-top:80px;">
+			<div class="inner" style="background-color: rgb(22, 21, 21);">
+				<div class="image-holder"style="padding-top:60px;padding-left:15px;">
+					<img src="/assets/img/registration-form-1.jpg" alt="">
+				</div>
+				<form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)" novalidate>
+					<h3  style="color:#fff;">Register as Tutor</h3>
+					<!--div class="form-group">
+						<input type="text" placeholder="First Name" class="form-control">
+						<input type="text" placeholder="Last Name" class="form-control">
+					</div-->
+					<div class="form-wrapper">
+						<input type="text"  name = "fullname" placeholder="Fullname" [(ngModel)]="fullname"style="background:none;" class="form-control">
+						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+					</div>
+<br/>
+					<div class="form-wrapper">
+						<input type="text"  name = "username" placeholder="Username" [(ngModel)]="username"style="background:none;" class="form-control">
+						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+					</div><br/>
+					<div class="form-wrapper">
+						<input type="text"  name = "email" placeholder="Email Address" [(ngModel)]="email"style="background:none;" class="form-control">
+						<i class="zmdi zmdi-email zmdi-hc-lg" style="color:#fff;"></i>
+					</div><br/>
+					<!--div class="form-wrapper">
+						<select name="" id="" class="form-control">
+							<option value="" disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="femal">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down zmdi-hc-lg" style="font-size: 17px"></i>
+					</div-->
+
+					<div class="form-wrapper">
+						<input type="password" name = "password"  placeholder="Password" [(ngModel)]="password" style="background:none;" class="form-control">
+						<i class="zmdi zmdi-lock zmdi-hc-lg" style="color:#fff;"></i>
+					</div><br/>
+					<div class="form-wrapper">
+						<input type="text"  name = "linkedin" placeholder="Linkedin" [(ngModel)]="linkedin"style="background:none;" class="form-control">
+						<i class="zmdi zmdi-linkedin zmdi-hc-lg" style="color:#fff;"></i>
+					</div><br/>
+					<div class="form-wrapper">
+						<input type="text"  name = "twitter" placeholder="Twitter" [(ngModel)]="twitter" style="background:none;" class="form-control">
+						<i class="zmdi zmdi-twitter zmdi-hc-lg" style="color:#fff;"></i>
+					</div><br/>
+					<div class="form-wrapper">
+						
+						<input type="text" name = "blog" placeholder="Blog" [(ngModel)]="blog" style="background:none;" class="form-control">
+							<i class="zmdi zmdi-blogger zmdi-hc-lg" style="color:#fff;"></i>
+						
+					</div>
+					
+					<button style="background:#fff;color:#333" value = "{{valbutton}}">Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>

@@ -1,0 +1,122 @@
+
+<head>
+    
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/assets/assets/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/assets/assets/css/main.css">
+    <!--===============================================================================================-->
+    </head>
+    
+        <div class="container-contact100" style="background-image: linear-gradient(orange, white);">
+            <div class="wrap-contact100">
+                <form class="contact100-form validate-form" >
+                    <span class="contact100-form-title" style="color:black" >
+                        Update Session 
+                    </span>
+                    <label><i class="fa fa-2x fa-comment" aria-hidden="true"></i> &nbsp; Topic Name:</label>
+                    <div class="wrap-input100 validate-input" data-validate="Please enter Topic Name">
+                        <input class="input100" type="text" name="topic" [(ngModel)] ="session.topic"  placeholder="Topic Name">
+                        
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label> <i class="fa fa-2x fa-map-pin" aria-hidden="true"></i> &nbsp; Locality:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please enter the locality">
+                        <input class="input100" type="text" name="locality" [(ngModel)] ="session.locality" placeholder="Locality">
+                        
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                        
+                    </div>
+                    <label><i class="fa fa-2x fa-calendar" aria-hidden="true"></i> &nbsp; Start Date:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please enter start date">
+						<input type="date"  name="from_date" [(ngModel)] ="session.from_date"  class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label><i class="fa fa-2x fa-calendar" aria-hidden="true"></i> &nbsp; End Date:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please enter to date">
+						<input type="date"  name="to_date"  [(ngModel)] ="session.to_date" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label><i class="fa fa-2x fa-clock-o" aria-hidden="true"></i> &nbsp; Time</label>
+					<div class="wrap-input100 validate-input" data-validate = "Please enter your the time">
+						<input type="time" placeholder="scheduled time" name = "time" [(ngModel)] ="session.time" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                    <label> <i class="fa fa-2x fa-address-card" aria-hidden="true"></i> &nbsp;  Description:</label>
+                    <div class="wrap-input100 validate-input" data-validate = "Please describe your session">
+                        <textarea class="input100" name="description"  [(ngModel)] ="session.description" placeholder="Description"></textarea>
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+					
+                    
+					<!--div class="wrap-input100 validate-input" data-validate = "Please describe your session">
+						<input type="text" placeholder="Description" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div-->
+                    <label><i class="fa fa-2x fa-users" aria-hidden="true"></i> &nbsp; Seats:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Seats Limit">
+                        <input class="input100" type="text" placeholder="Seats" [(ngModel)] ="session.seats" name="seats" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+
+                    <label><i class="fa fa-2x fa-users" aria-hidden="true"></i> &nbsp; Room Name:</label>
+					<div class="wrap-input100 validate-input" data-validate = "Seats Limit">
+                        <input class="input100" type="text" placeholder="Seats" [(ngModel)] ="session.online" name="online" class="input100">
+                        <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
+                    </div>
+                   
+					
+    
+                    <!--div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
+                        <input class="input100" type="text" name="phone" placeholder="Phone">
+                        <span class="focus-input100"></span>
+                    </div-->
+    
+                    
+    
+                    <div class="container-contact100-form-btn">
+                        <button (click) = "update()" value="{{valbutton}}" class="contact100-form-btn">
+                            <span>
+                                <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                                Update
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    
+    
+    <!--===============================================================================================-->
+        
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/bootstrap/js/popper.js"></script>
+        <script src="/assets/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/daterangepicker/moment.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+        <script src="/assets/assets/js/main.js"></script>
+    
+    
+    

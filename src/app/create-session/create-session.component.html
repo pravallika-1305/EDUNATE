@@ -1,0 +1,90 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Title Page-->
+    <title>Open Session</title>
+
+    <!-- Icons font CSS-->
+    <link href="/assets/cassets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/assets/cassets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/assets/cassets/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/assets/cassets/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/assets/cassets/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">CREATE A NEW SESSION</h2>
+                    <form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)" novalidate>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text"  placeholder="Topic Name" [(ngModel)]="topic" name="topic">
+                        </div>
+			<div class="input-group">
+                            <input class="input--style-3" type="text"  placeholder="Locality" [(ngModel)]="locality"  name="locality">
+			    <i class="zmdi zmdi-pin input-icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3 js-datepicker"  type="date" value="{{date | date:'yyyy-MM-dd'}}" [(ngModel)]="from_date" placeholder="Start Date" name="from_date">
+                            <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
+                        </div>
+			<div class="input-group">
+                            <input class="input--style-3 js-datepicker"  type="date" value="{{from_date | date:'yyyy-MM-dd'}}" [(ngModel)]="to_date"  placeholder="End Date" name="to_date">
+                            <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
+                        </div>
+                        <!--div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="gender">
+                                    <option disabled="disabled" selected="selected">Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div-->
+			
+			<div class="input-group">
+                            <input class="input--style-3" type="time"  [(ngModel)]="time"  placeholder="Time" name="time">
+                        </div>
+			<div class="input-group">
+                            <input class="input--style-3" style="height:100px;outline: solid #000;"  [(ngModel)]="description"  type="text" placeholder="Description" name="description">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="number"  [(ngModel)]="seats"  placeholder="Seats" name="seats">
+                        </div>
+			<a (click)="show()">Is your session online?</a><br/><br/>
+                        <div class="input-group" *ngIf = "onlineshow">
+                            <input class="input--style-3" type="text" name="topic" [(ngModel)]="online"  placeholder="Room Name" name="online">
+                        </div>
+                        <div class="p-t-10">
+                            <button  value={{valbutton}} class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/assets/cassets/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/assets/cassets/vendor/select2/select2.min.js"></script>
+    <script src="/assets/cassets/vendor/datepicker/moment.min.js"></script>
+    <script src="/assets/cassets/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/assets/cassets/js/global.js"></script>
+
+</body>
+<!-- end document-->
