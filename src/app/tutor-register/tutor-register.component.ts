@@ -22,7 +22,8 @@ export class TutorRegisterComponent implements OnInit {
 
 
   ngOnInit() {
-    this.newService.GetUser_tutor().subscribe(data => this.Repdata = data)
+    this.newService.GetUser_tutor().subscribe(data => this.Repdata = data);
+    this.newService.setLoginnavbar();
   }
 
   onSave = function (user) {

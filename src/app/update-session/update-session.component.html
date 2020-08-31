@@ -43,12 +43,12 @@
                     </div>
                     <label><i class="fa fa-2x fa-calendar" aria-hidden="true"></i> &nbsp; Start Date:</label>
                     <div class="wrap-input100 validate-input" data-validate = "Please enter start date">
-						<input type="date"  name="from_date" [(ngModel)] ="session.from_date"  class="input100">
+						<input type="date"  name="from_date" [min]="currentDate| date:'yyyy-MM-dd'" [(ngModel)] ="session.from_date"  class="input100">
                         <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
                     </div>
                     <label><i class="fa fa-2x fa-calendar" aria-hidden="true"></i> &nbsp; End Date:</label>
                     <div class="wrap-input100 validate-input" data-validate = "Please enter to date">
-						<input type="date"  name="to_date"  [(ngModel)] ="session.to_date" class="input100">
+						<input type="date"  name="to_date"  [min]="session.from_date| date:'yyyy-MM-dd'" [(ngModel)] ="session.to_date" class="input100">
                         <span class="focus-input100" style= "background-color: rgba(28, 162, 214, 0.932)"></span>
                     </div>
                     <label><i class="fa fa-2x fa-clock-o" aria-hidden="true"></i> &nbsp; Time</label>

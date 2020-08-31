@@ -18,6 +18,7 @@ export class TutorProfileComponent implements OnInit {
   ngOnInit(): void {
     this.Repdata = this.newService.getobjecttutor();
     this.newService.GetUser_session().subscribe(data => this.sessions = data);
+    this.newService.setTutornavbar();
   }
 
   delete = function (id) {
@@ -36,8 +37,10 @@ export class TutorProfileComponent implements OnInit {
   createSession() {
     this.router.navigate(["createSession"]);
   }
-  viewEnrollmentList(id) {
-    this.newService.sendobjectsessionid(id);
+  viewEnrollmentList(session) {
+    this.newService.sendobjectsessionid(session._id);
+    this.newService.sendSessionDetails(session.online);
+    this.newService.sendSessionfrom_date(session.from_date);
     this.router.navigate(["enrollmentList"]);
   }
 

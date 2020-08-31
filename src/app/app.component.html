@@ -12,7 +12,8 @@
 
 
 
-<div class="super_container">
+
+<div class="super_container" *ngIf="newService.homenavbar">
     
   <!-- Header -->
 
@@ -32,7 +33,7 @@
                       <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
           <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
           <li class="main_nav_item"><a style = "color:white;"href="#">about us</a></li>
-          <li class="main_nav_item"><a style = "color:white;"href="contact.html">contact</a></li>
+          <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
           <li class="main_nav_item"><a style = "color:white;"routerLink="login">Sign-Up/Login</a></li>
           <!--router-outlet></router-outlet-->
                   </ul>
@@ -52,13 +53,89 @@
 
   </header>
 
-<!--app-login></app-login-->
-<!--app-tutor-register></app-tutor-register-->
-<!--app-poc-register></app-poc-register-->
-<!--app-tutor-profile></app-tutor-profile-->
-<!--app-contact></app-contact-->
-<!--app-create-session></app-create-session-->
-<!--app-update-tutor></app-update-tutor-->
-<!--app-update-session></app-update-session-->
-<!--app-book-seats></app-book-seats-->
+</div>
+
+  <div class="super_container" *ngIf="newService.tutornavbar">
+    
+    <!-- Header -->
+  
+    <header class="header d-flex flex-row">
+        <div class="header_content d-flex flex-row align-items-center">
+            <!-- Logo -->
+            <div class="logo_container">
+                <div class="logo">
+                    <img src="/assets/img/logo.png" style="padding-top: 3px;"alt="">
+                </div>
+            </div>
+  
+            <!-- Main Navigation -->
+            <nav class="main_nav_container">
+                <div class="main_nav">
+                    <ul class="main_nav_list">
+                        <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
+            <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
+            <li class="main_nav_item"><a style = "color:white;"href="#">My Profile</a></li>
+            <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
+            <li class="main_nav_item"><a style = "color:white;"routerLink="login">Sign-Up/Login</a></li>
+            <!--router-outlet></router-outlet-->
+                    </ul>
+                </div>
+            </nav>
+    </div>
+  
+        <div class="header_side d-flex flex-row justify-content-center align-items-center">
+            <img src="/assets/img/phone-call.svg" alt="">
+            <span>+91 7013411662</span>
+        </div>
+  
+        <!-- Hamburger -->
+        <div class="hamburger_container">
+            <i class="fas fa-bars trans_200"></i>
+        </div>
+  
+    </header>
+
+</div>
+
+
+    <div class="super_container" *ngIf="newService.pocnavbar">
+    
+        <!-- Header -->
+      
+        <header class="header d-flex flex-row">
+            <div class="header_content d-flex flex-row align-items-center">
+                <!-- Logo -->
+                <div class="logo_container">
+                    <div class="logo">
+                        <img src="/assets/img/logo.png" style="padding-top: 3px;"alt="">
+                    </div>
+                </div>
+      
+                <!-- Main Navigation -->
+                <nav class="main_nav_container">
+                    <div class="main_nav">
+                        <ul class="main_nav_list">
+                            <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
+                <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
+                <li class="main_nav_item"><a style = "color:white;"href="#">Search Courses</a></li>
+                <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
+                <li class="main_nav_item"><a style = "color:white;"routerLink="login">Logout</a></li>
+                <!--router-outlet></router-outlet-->
+                        </ul>
+                    </div>
+                </nav>
+        </div>
+      
+            <div class="header_side d-flex flex-row justify-content-center align-items-center">
+                <img src="/assets/img/phone-call.svg" alt="">
+                <span>+91 7013411662</span>
+            </div>
+      
+            <!-- Hamburger -->
+            <div class="hamburger_container">
+                <i class="fas fa-bars trans_200"></i>
+            </div>
+      
+        </header>
+</div>
 <router-outlet></router-outlet>

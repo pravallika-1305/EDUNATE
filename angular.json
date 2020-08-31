@@ -80,7 +80,8 @@
               "src/assets/table/vendor/bootstrap/css/bootstrap.min.css"
               
             ],
-            "scripts": ["src/assets/js/jquery-3.2.1.min.js",
+            "scripts": ["src/vendor/jitsi/external_api.js",
+              "src/assets/js/jquery-3.2.1.min.js",
               "src/assets/styles/bootstrap4/popper.js",             
               "src/assets/styles/bootstrap4/bootstrap.min.js",
               "src/assets/js/custom.js",
@@ -141,7 +142,8 @@
               "src/assets/table/vendor/bootstrap/js/bootstrap.js",
               "src/assets/table/vendor/bootstrap/js/tooltip.js",
               "src/assets/table/vendor/select2/select2.js",
-              "src/assets/table/vendor/select2/select2.min.js"
+              "src/assets/table/vendor/select2/select2.min.js",
+              
 
               
             ]

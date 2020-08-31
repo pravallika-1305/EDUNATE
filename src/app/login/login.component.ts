@@ -18,8 +18,9 @@ export class LoginComponent implements OnInit {
   constructor(private newService: CommonService,private router: Router) { }
 
   ngOnInit(): void {
-    this.newService.GetUser_tutor().subscribe(data => this.Repdata = data)
-    this.newService.GetUser_poc().subscribe(data => this.Repdata1 = data)
+    this.newService.GetUser_tutor().subscribe(data => this.Repdata = data);
+    this.newService.GetUser_poc().subscribe(data => this.Repdata1 = data);
+    this.newService.setLoginnavbar();
   }
   login(){
     var count = 0;
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
         count2 = count2 + 1;
         this.newService.sendobjectpoc(this.Repdata1[index]);
         this.newService.sendobjectemail(this.Repdata1[index].username);
+        this.newService.sendobjectpocemail(this.Repdata1[index].email);
         
       }
     }

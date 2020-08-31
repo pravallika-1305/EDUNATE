@@ -42,6 +42,9 @@ var UsersSchema = new Schema({
       locality:{
         type:String
     },
+    email:{
+      type:String
+  },
     description:{
         type:String
     },

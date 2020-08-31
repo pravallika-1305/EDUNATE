@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
 import { Router } from '@angular/router';
+import { SmsService } from '../sms.service';
+import { FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-book-seats',
@@ -8,15 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./book-seats.component.css']
 })
 export class BookSeatsComponent implements OnInit {
+  loading = false;
+  buttonText = "SEND";
 
-  data: { pocname: any; topic: any; locality: any; from_date: any; to_date: any; time: any; description: any; seats: any; online: any;tutorname:any;orderedby:any };
+  data: { email:any,pocname: any; topic: any; locality: any; from_date: any; to_date: any; time: any; description: any; seats: any; online: any;tutorname:any;orderedby:any };
   cardDetails:any;
   errorMessage: any;
   seats: any;
   actualseats:any;
   data1: {id:any,tutorname: any;topic: any; locality: any; from_date: any; to_date: any; time: any; description: any; seats: any; online: any;};
   noOfseats: any;
-  constructor(private newService: CommonService,private router:Router) { }
+  phone: any;
+  constructor(private newService: CommonService,private router:Router,public smsService: SmsService) { }
 
   ngOnInit(): void {
     this.cardDetails = this.newService.getobjectcard();
@@ -25,6 +30,7 @@ export class BookSeatsComponent implements OnInit {
 
   confirm(noOfseats){
     this.data = {
+      email:this.newService.getobjectpocemail(),
       pocname:this.newService.getobjectemail(),
       topic:this.cardDetails.topic,
       locality:this.cardDetails.locality,
@@ -60,11 +66,36 @@ export class BookSeatsComponent implements OnInit {
         alert(data.data);
         console.log(this.data1);
         //this.ngOnInit();
+        this.register();
         this.router.navigate(['displayMyCart']);
       }
         , error => this.errorMessage = error)
       
   }
-
+  register() {
+    this.loading = true;
+    //this.buttonText = "Sending...";
+    let user = {
+      name: this.newService.getobjectemail(),
+      phone: this.phone,
+      message: "Hello!" + name + "You have just booked " + this.noOfseats + " seats for " + this.cardDetails.topic + " from " + this.cardDetails.from_date + " to " + this.cardDetails.from_date,
+    }
+    this.smsService.sendMessage("http://localhost:3002/sendSMS", user).subscribe(
+    data => {
+      let res:any = data; 
+      console.log(
+        `👏 > 👏 > 👏 > 👏 ${user.name}s details are sent successfully, the message id is ${res.messageId}`
+      );
+    },
+    err => {
+      console.log(err);
+      this.loading = false;
+      //this.buttonText = "SEND";
+    },() => {
+      this.loading = false;
+      //this.buttonText = "SEND";
+    }
+  );
+}
 
 }

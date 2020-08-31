@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("The server started on port 3000 !!!!!!");
 });
 
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
     res.send(info);
   });
 });*/
-async function sendEMail(user, callback) {
+/*async function sendEMail(user, callback) {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -47,7 +47,7 @@ async function sendEMail(user, callback) {
   // send mail with defined transport object
   let info = await transporter.sendMail(mailOptions);
   callback(info);
-}
+}*/
 
 
 app.post("/sendmailv", (req, res) => {
@@ -57,10 +57,7 @@ app.post("/sendmailv", (req, res) => {
     console.log(`The mail has been sent 😃 and the id is ${forward.messageId}`);
     res.send(forward);
 });
-sendEMail(user, forward => {
-  console.log(`The mail has been sent 😃 and the id is ${forward.messageId}`);
-  //res.send(forward);
-});
+
 });
 
 async function sendMail(user, callback) {
@@ -78,7 +75,7 @@ async function sendMail(user, callback) {
 
 let volunteers = {
     from: '"Edunate Admin"<admin@edunate.com>', // sender address
-    to: "sahithireddysane@gmail.com", // list of receivers
+    to: user.email, // list of receivers
     subject: "Acknowledgement", // Subject line
     html: `<h1>Hello volunteers! Hope this mail finds you hale and hearty!</h1><br>
     <h2>A user with the following details and message contacted us:</h2>

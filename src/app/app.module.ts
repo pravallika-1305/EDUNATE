@@ -39,7 +39,9 @@ const appRoot: Routes = [
   {path:'displayMyCart',component: DisplayMyCartComponent},
   {path: 'pocRegister',component: PocRegisterComponent},
   {path: 'tutorRegister',component: TutorRegisterComponent},
-  {path: 'enrollmentList', component:EnrollmentListComponent}
+  {path: 'enrollmentList', component:EnrollmentListComponent},
+  {path: 'contactus', component:ContactComponent},
+  {path: 'video', component:VideoComponent}
  /*
  
  

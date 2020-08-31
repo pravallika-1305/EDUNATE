@@ -19,13 +19,13 @@ export class CreateSessionComponent implements OnInit {
   description:any;
   online:any;
   time:any;
-  date=new Date();
   
   constructor(private newService: CommonService,private router: Router ) { }
   Repdata;
   valbutton = 'Save';
   tutorname:any;
-
+  currentDate = Date.now(); 
+  
   ngOnInit() {
     this.tutorname = this.newService.getobjectemail();
   }

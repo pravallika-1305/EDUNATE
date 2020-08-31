@@ -35,11 +35,11 @@
 			    <i class="zmdi zmdi-pin input-icon"></i>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3 js-datepicker"  type="date" value="{{date | date:'yyyy-MM-dd'}}" [(ngModel)]="from_date" placeholder="Start Date" name="from_date">
+                            <input class="input--style-3 js-datepicker"  type="date" [min]="currentDate| date:'yyyy-MM-dd'"  [(ngModel)]="from_date" placeholder="Start Date" name="from_date">
                             <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
                         </div>
 			<div class="input-group">
-                            <input class="input--style-3 js-datepicker"  type="date" value="{{from_date | date:'yyyy-MM-dd'}}" [(ngModel)]="to_date"  placeholder="End Date" name="to_date">
+                            <input class="input--style-3 js-datepicker"  type="date" [min]="from_date | date:'yyyy-MM-dd'" [(ngModel)]="to_date"  placeholder="End Date" name="to_date">
                             <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
                         </div>
                         <!--div class="input-group">

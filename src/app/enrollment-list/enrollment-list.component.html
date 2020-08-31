@@ -23,8 +23,17 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<div style="padding-left: 250px;">
+<button  [disabled]="buttonDisable"  (click)="showLink()" class="btn btn-lg btn-warning" >Generate Link</button>
+</div>
 
 
+<div style="padding-left: 250px;" *ngIf = "show">
+	<textarea>{{url}}</textarea>
+	<button  [disabled]="buttonDisable"  (click)="send()" class="btn btn-lg btn-warning" >Send</button>
+	</div>
+<br/>
 				<div class="table100 ver6 m-b-110">
 					<table data-vertable="ver6" >
 						<thead>

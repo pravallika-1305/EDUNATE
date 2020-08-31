@@ -17,6 +17,12 @@ export class CommonService {
   id: any;
   forgotid: any;
   forgot: any;
+  pocemail:any;
+  session_online: any;
+  session_from_date: any;
+  homenavbar: boolean;
+  pocnavbar: boolean;
+  tutornavbar: boolean;
   constructor(private http: Http) { }
   
   sendobjecttutor(data){
@@ -102,6 +108,12 @@ export class CommonService {
     return this.http.get('http://localhost:8083/api/getUser/')
       .map((response: Response) => response.json());
   }
+  sendobjectpocemail(data8){
+    this.pocemail = data8;
+  }
+  getobjectpocemail(){
+    return this.pocemail;
+  }
   UpdateUser_tutor(data) {
     return this.http.post('http://localhost:8080/api/UpdateUser/', data)
       .map((response: Response) => response.json());
@@ -117,6 +129,33 @@ export class CommonService {
   deleteUser(id) {
     return this.http.post('http://localhost:8082/api/deleteUser/', { 'id': id })
       .map((response: Response) => response.json());
+  }
+  sendSessionDetails(data9){
+    this.session_online = data9;
+  }
+  getSessionDetails(){
+    return this.session_online;
+  }
+  sendSessionfrom_date(data10){
+    this.session_from_date = data10;
+  }
+  getSessionfrom_date(){
+    return this.session_from_date;
+  }
+  setLoginnavbar(){
+    this.homenavbar = true;
+    this.pocnavbar = false;
+    this.tutornavbar = false;
+  }
+  setTutornavbar(){
+    this.homenavbar = false;
+    this.pocnavbar = false;
+    this.tutornavbar = true;
+  }
+  setPocnavbar(){
+    this.homenavbar = false;
+    this.pocnavbar = true;
+    this.tutornavbar = false;
   }
 
 }

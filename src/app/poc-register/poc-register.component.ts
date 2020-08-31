@@ -18,7 +18,8 @@ export class PocRegisterComponent implements OnInit {
   email:any;
   
   ngOnInit() {
-    this.newService.GetUser_poc().subscribe(data => this.Repdata = data)
+    this.newService.GetUser_poc().subscribe(data => this.Repdata = data);
+    this.newService.setLoginnavbar();
   }
 
   onSave = function (user) {

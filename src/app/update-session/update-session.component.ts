@@ -14,6 +14,7 @@ export class UpdateSessionComponent implements OnInit {
   onlineshow:boolean = false;
   errorMessage: any;
   valbutton = "Update";
+  currentDate = new Date();
   constructor(private newService: CommonService,private router:Router) { }
 
   ngOnInit(): void {

@@ -21,6 +21,7 @@ export class DisplayAllComponent implements OnInit {
     this.newService.GetUser_session().subscribe(data => this.sessions = data);
     this.Repdata = this.newService.getobjectpoc();
     console.log(this.Repdata);
+    this.newService.setPocnavbar();
     
   }
   
