@@ -24,10 +24,19 @@ import { DisplayAllComponent } from './display-all/display-all.component';
 import { UpdatePocComponent } from './update-poc/update-poc.component';
 import { DisplayMyCartComponent } from './display-my-cart/display-my-cart.component';
 import { EnrollmentListComponent } from './enrollment-list/enrollment-list.component';
+import { CertificateComponent } from './certificate/certificate.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { CheckComponent } from './check/check.component';
+import { NewsComponent } from './news/news.component';
+import { AboutComponent } from './about/about.component';
+import { CoursesListComponent } from './courses-list/courses-list.component';
+import { TutorListComponent } from './tutor-list/tutor-list.component';
 
 
 
 const appRoot: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'tutorProfile', component: TutorProfileComponent},
   {path: 'updateTutor',component: UpdateTutorComponent},
@@ -41,20 +50,21 @@ const appRoot: Routes = [
   {path: 'tutorRegister',component: TutorRegisterComponent},
   {path: 'enrollmentList', component:EnrollmentListComponent},
   {path: 'contactus', component:ContactComponent},
-  {path: 'video', component:VideoComponent}
- /*
- 
- 
- 
- 
+  {path: 'video', component:VideoComponent},
+  {path: 'certificate', component:CertificateComponent},
+  {path: 'forgot', component:ForgotComponent},
+  {path: 'check',component:CheckComponent},
+  {path: 'news',component:NewsComponent},
+  {path: 'about',component:AboutComponent},
+  {path: 'tutorList',component:TutorListComponent},
+  {path: 'coursesList',component:CoursesListComponent}
+];
 
- {path: 'display',component: DisplaymycartComponent},
- ,
+ /*
  {path: 'forgot',component: ForgotComponent},
  {path: 'check',component: CheckComponent},
- 
- {path: 'whoenrolled',component: EnrollmentlistComponent}*/
-];
+
+];*/
 
 
 @NgModule({
@@ -74,7 +84,14 @@ const appRoot: Routes = [
     DisplayAllComponent,
     UpdatePocComponent,
     DisplayMyCartComponent,
-    EnrollmentListComponent
+    EnrollmentListComponent,
+    CertificateComponent,
+    ForgotComponent,
+    CheckComponent,
+    NewsComponent,
+    AboutComponent,
+    CoursesListComponent,
+    TutorListComponent
   ],
   imports: [
     BrowserModule,

@@ -41,6 +41,9 @@ export class TutorProfileComponent implements OnInit {
     this.newService.sendobjectsessionid(session._id);
     this.newService.sendSessionDetails(session.online);
     this.newService.sendSessionfrom_date(session.from_date);
+    this.newService.sendSessionto_date(session.to_date);
+    this.newService.sendSessiontutorname(session.tutorname);
+    this.newService.sendSessiontopic(session.topic);
     this.router.navigate(["enrollmentList"]);
   }
 

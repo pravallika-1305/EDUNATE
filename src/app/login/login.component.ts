@@ -68,5 +68,13 @@ export class LoginComponent implements OnInit {
   forgot(){
     this.router.navigate(['forgot']);
   }
-  
+  navigatePoc(){
+    this.router.navigate(['pocRegister']);
+  }
+  navigateTutor(){
+    this.router.navigate(['tutorRegister']);
+  }
+  showChoice(){
+    jQuery('#empModel').modal('show');
+  }
 }

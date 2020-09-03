@@ -11,6 +11,29 @@
 </head>
 
 <body>
+    <div class="modal fade" id="empModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="padding-left: 150px;">Register As</h2>
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    
+                </div>
+                    <div class="modal-body" style="padding-left: 150px;">
+                    <button class="btn btn-primary btn-sm" (click)="navigateTutor()" data-dismiss="modal">TUTOR</button><br/>
+                    <button class="btn btn-primary btn-sm" (click)="navigatePoc()" data-dismiss="modal">POC</button>
+                </div>
+                    
+             
+                
+                    
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <div class="wrapper" style="background-image: url('/assets/img/login.jpg');">
         <div class="inner" style="background-color: rgb(22, 21, 21)">
@@ -59,7 +82,9 @@
                 </button>
                 <br/>
                 <br/>
-                <a href="#" style="text-align:center ">Forgot Password?</a>
+                <a style="text-align:center;color:blue;" (click)="forgot()">Forgot Password?</a><br/>
+                <span style="color:#fff;">Do not have an account? </span><a style="text-align:center;color:blue;" (click)="showChoice()">Register</a>
+
             </form>
             
         </div>

@@ -1,5 +1,21 @@
 <head>
     <!-- Required meta tags -->
+  <style>::-webkit-input-placeholder {
+    color: peachpuff;
+    font-size: 30px;
+  }
+  ::-moz-placeholder {
+    color: peachpuff;
+    font-size: 30px;
+  }
+  :-ms-input-placeholder {
+    color: peachpuff;
+    font-size: 30px;
+  }
+  ::placeholder {
+    color: peachpuff;
+    font-size: 30px;
+  }</style>
   
     <title>Profile</title>
   
@@ -100,9 +116,19 @@
       </div>
     </div>
   </section>
+
+    <h2 style="color:#000;text-align:center;">Sessions</h2>
     
-    <h2 style="color:#000;text-align:center;">Your Sessions</h2>
-    <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
+      <!--div class="search"-->
+      <div class="container">
+        <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Name"  [(ngModel)]="term" >
+
+      <!--input type="text" style="font-family: monospace;
+      font-size: 20px;
+      color: peru;"class="form-control" placeholder="Search Here" [(ngModel)]="term"-->
+    </div>
+  <div>
+    <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;">
     <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
         <div class="card" >
             <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">

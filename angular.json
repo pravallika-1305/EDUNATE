@@ -75,6 +75,7 @@
               "src/assets/cassets/vendor/mdi-font/css/material-design-iconic-font.min.css",
               "src/assets/cassets/vendor/select2/select2.min.css",
               "src/assets/table/css/main.css",
+              
               "src/assets/table/vendor/select2/select2.css",
               "src/assets/table/vendor/select2/select2.min.css",
               "src/assets/table/vendor/bootstrap/css/bootstrap.min.css"
@@ -99,8 +100,6 @@
               "src/assets/js/teachers_custom.js",
               "src/assets/asset/js/bootstrap.min.js",
               "src/assets/asset/js/classie.js",
-              "src/assets/asset/js/jquery-3.2.1.min.js",
-              "src/assets/asset/js/jquery-min.js",
               "src/assets/asset/js/jquery.counterup.min.js",
               "src/assets/asset/js/jquery.easing.min.js",
               "src/assets/asset/js/jquery.mixitup.js",
@@ -126,7 +125,6 @@
               "src/assets/assets/vendor/bootstrap/js/bootstrap.min.js",
               "src/assets/assets/vendor/bootstrap/js/tooltip.js",
               "src/assets/assets/vendor/countdowntime/countdowntime.js",
-              
               "src/assets/assets/vendor/daterangepicker/moment.js",
               "src/assets/assets/vendor/daterangepicker/moment.min.js",
               "src/assets/assets/vendor/select2/select2.js",
@@ -142,7 +140,7 @@
               "src/assets/table/vendor/bootstrap/js/bootstrap.js",
               "src/assets/table/vendor/bootstrap/js/tooltip.js",
               "src/assets/table/vendor/select2/select2.js",
-              "src/assets/table/vendor/select2/select2.min.js",
+              "src/assets/table/vendor/select2/select2.min.js"
               
 
               

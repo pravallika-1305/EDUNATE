@@ -23,6 +23,9 @@ export class CommonService {
   homenavbar: boolean;
   pocnavbar: boolean;
   tutornavbar: boolean;
+  session_to_date: any;
+  session_tutorname: any;
+  session_topic: any;
   constructor(private http: Http) { }
   
   sendobjecttutor(data){
@@ -156,6 +159,24 @@ export class CommonService {
     this.homenavbar = false;
     this.pocnavbar = true;
     this.tutornavbar = false;
+  }
+  sendSessionto_date(data11){
+    this.session_to_date = data11;
+  }
+  getSessionto_date(){
+    return this.session_to_date;
+  }
+  sendSessiontutorname(data12){
+    this.session_tutorname = data12;
+  }
+  getSessiontutorname(){
+    return this.session_tutorname;
+  }
+  sendSessiontopic(data13){
+    this.session_topic = data13;
+  }
+  getSessiontopic(){
+    return this.session_topic;
   }
 
 }

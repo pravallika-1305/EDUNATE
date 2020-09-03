@@ -30,11 +30,11 @@
           <nav class="main_nav_container">
               <div class="main_nav">
                   <ul class="main_nav_list">
-                      <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
-          <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
-          <li class="main_nav_item"><a style = "color:white;"href="#">about us</a></li>
-          <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
-          <li class="main_nav_item"><a style = "color:white;"routerLink="login">Sign-Up/Login</a></li>
+                      <li class="main_nav_item"><a style = "color:white;" (click) = "navigateHome()">Home</a></li>
+          <!--li class="main_nav_item"><a style = "color:white;"  >News</a></li-->
+          <li class="main_nav_item"><a style = "color:white;" (click) = "navigateAbout()">About Us</a></li>
+          <li class="main_nav_item"><a style = "color:white;" (click) = "navigateContact()">Contact Us</a></li>
+          <li class="main_nav_item"><a style = "color:white;" (click) = "navigateLogin()">Sign-Up/Login</a></li>
           <!--router-outlet></router-outlet-->
                   </ul>
               </div>
@@ -72,11 +72,13 @@
             <nav class="main_nav_container">
                 <div class="main_nav">
                     <ul class="main_nav_list">
-                        <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
-            <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
-            <li class="main_nav_item"><a style = "color:white;"href="#">My Profile</a></li>
-            <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
-            <li class="main_nav_item"><a style = "color:white;"routerLink="login">Sign-Up/Login</a></li>
+                        <li class="main_nav_item"><a style = "color:white;" (click) = "navigateHome()">Home</a></li>
+            
+            
+            <li class="main_nav_item"><a style = "color:white;" (click) = "navigateContact()">Contact Us</a></li>
+            <li class="main_nav_item"><a style = "color:white;" href="#">About Us</a></li>
+            <li class="main_nav_item"><a style = "color:white;"  (click) = "navigateTutorProfile()">Profile</a></li>
+            <li class="main_nav_item"><a style = "color:white;" (click) = "navigateLogout()">Logout</a></li>
             <!--router-outlet></router-outlet-->
                     </ul>
                 </div>
@@ -115,11 +117,14 @@
                 <nav class="main_nav_container">
                     <div class="main_nav">
                         <ul class="main_nav_list">
-                            <li class="main_nav_item"><a style = "color:white;" href="#">home</a></li>
-                <li class="main_nav_item"><a style = "color:white;"href="news.html">news</a></li>
-                <li class="main_nav_item"><a style = "color:white;"href="#">Search Courses</a></li>
-                <li class="main_nav_item"><a style = "color:white;"routerLink="contactus">contact</a></li>
-                <li class="main_nav_item"><a style = "color:white;"routerLink="login">Logout</a></li>
+                            <li class="main_nav_item"><a style = "color:white;" href="#">Home</a></li>
+                
+                <li class="main_nav_item"><a style = "color:white;"href="#">About Us</a></li>
+                <li class="main_nav_item"><a style = "color:white;" (click) = "navigateContact()">Contact Us</a></li>
+                <li class="main_nav_item"><a style = "color:white;" (click) = "navigateEnrolledSessions()">Your Sessions</a></li>
+                <li class="main_nav_item"><a style = "color:white;" (click) = "navigateSearch()">Search</a></li>
+                <li class="main_nav_item"><a style = "color:white;" (click) = "navigateLogout()">Logout</a></li>
+            
                 <!--router-outlet></router-outlet-->
                         </ul>
                     </div>

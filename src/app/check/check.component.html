@@ -1,0 +1,57 @@
+
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/assets/styles/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('/assets/img/login.jpg');">
+			<div class="inner" >
+				<div class="image-holder">
+					<img src="/assets/img/reset.png" alt="">
+				</div>
+				<form action="">
+					<br/>
+					<h3>Reset Password</h3>
+				
+					<div class="form-wrapper">
+						<input type="password" placeholder="Code" class="form-control" name="forgot_object" [(ngModel)] ="forgot_object" style = "width: 100%;">
+						<i class="zmdi zmdi-lock zmdi-hc-lg"></i>
+					</div>
+					
+					<button (click) ="check()">Verify
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<br/>
+					<br/>
+					<div *ngIf ="show">
+					<div class="form-wrapper">
+						<input type="password" placeholder="New Password" class="form-control" name="password" [(ngModel)] ="password"style = "width: 100%;">
+						<i class="zmdi zmdi-lock zmdi-hc-lg"></i>
+					</div>
+					<br/>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Confirm Password" class="form-control" name="conpassword"[(ngModel)] ="conpassword"style = "width: 100%;">
+						<i class="zmdi zmdi-lock zmdi-hc-lg"></i>
+					</div>
+					<button (click) = "confirm()">Reset
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<br/>
+					<br/>
+				</div>
+					
+				</form>
+				
+			</div>
+		</div>
+		
+	</body>
