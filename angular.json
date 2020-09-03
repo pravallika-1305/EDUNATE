@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/assets/styles/contact_responsive.css",
               "src/assets/styles/bootstrap4/bootstrap.min.css",
               "src/assets/styles/courses_responsive.css",
@@ -64,7 +65,6 @@
               "src/assets/assets/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/assets/vendor/css-hamburgers/hamburgers.css",
               "src/assets/assets/vendor/css-hamburgers/hamburgers.min.css",
-              
               "src/assets/assets/vendor/select2/select2.css",
               "src/assets/assets/vendor/select2/select2.min.css",
               "src/assets/cassets/css/main.css",
@@ -75,15 +75,14 @@
               "src/assets/cassets/vendor/mdi-font/css/material-design-iconic-font.min.css",
               "src/assets/cassets/vendor/select2/select2.min.css",
               "src/assets/table/css/main.css",
-              
               "src/assets/table/vendor/select2/select2.css",
               "src/assets/table/vendor/select2/select2.min.css",
               "src/assets/table/vendor/bootstrap/css/bootstrap.min.css"
-              
             ],
-            "scripts": ["src/vendor/jitsi/external_api.js",
+            "scripts": [
+              "src/vendor/jitsi/external_api.js",
               "src/assets/js/jquery-3.2.1.min.js",
-              "src/assets/styles/bootstrap4/popper.js",             
+              "src/assets/styles/bootstrap4/popper.js",
               "src/assets/styles/bootstrap4/bootstrap.min.js",
               "src/assets/js/custom.js",
               "src/assets/plugins/scrollmagic/ScrollMagic.min.js",
@@ -141,9 +140,6 @@
               "src/assets/table/vendor/bootstrap/js/tooltip.js",
               "src/assets/table/vendor/select2/select2.js",
               "src/assets/table/vendor/select2/select2.min.js"
-              
-
-              
             ]
           },
           "configurations": {

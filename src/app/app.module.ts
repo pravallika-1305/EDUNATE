@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatCardModule } from '@angular/material/card';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +33,7 @@ import { NewsComponent } from './news/news.component';
 import { AboutComponent } from './about/about.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { TutorListComponent } from './tutor-list/tutor-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -100,7 +103,9 @@ const appRoot: Routes = [
     HttpClientModule,
     HttpModule,
     Ng2SearchPipeModule,
-    RouterModule.forRoot(appRoot)
+    RouterModule.forRoot(appRoot),
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

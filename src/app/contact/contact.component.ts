@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { FormControl, Validators } from "@angular/forms";
+import { google } from '@google/maps';
 
+declare const google;
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements AfterViewInit{
 
 loading = false;
 buttonText = "Submit";
@@ -65,4 +67,33 @@ messageFormControl = new FormControl("", [
       }
     );
 }
+title = 'angular-gmap';
+  @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
+  map: google.maps.Map;
+  lat = 17.526449;
+  lng =  78.371545;
+
+  coordinates = new google.maps.LatLng(this.lat, this.lng);
+
+  mapOptions: google.maps.MapOptions = {
+    center: this.coordinates,
+    zoom: 8
+  };
+
+  marker = new google.maps.Marker({
+    position: this.coordinates,
+    map: this.map,
+  });
+
+  ngAfterViewInit() {
+    this.mapInitializer();
+  }
+
+  mapInitializer() {
+    this.map = new google.maps.Map(this.gmap.nativeElement,
+      this.mapOptions);
+    this.marker.setMap(this.map);
+  }
 }
+
+

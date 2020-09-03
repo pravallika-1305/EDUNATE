@@ -26,16 +26,18 @@
 						<input type="text" placeholder="Last Name" class="form-control">
 					</div-->
 					<div class="form-wrapper">
-						<input type="text"  name = "fullname" placeholder="Fullname" [(ngModel)]="fullname"style="background:none;" class="form-control">
+						<input type="text" id="fullname" name="fullname" placeholder="Fullname" [(ngModel)]="fullname" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+						
 					</div>
+					
 <br/>
 					<div class="form-wrapper">
 						<input type="text"  name = "username" placeholder="Username" [(ngModel)]="username"style="background:none;" class="form-control">
 						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
 					</div><br/>
 					<div class="form-wrapper">
-						<input type="text"  name = "email" placeholder="Email Address" [(ngModel)]="email"style="background:none;" class="form-control">
+						<input type="email"  name = "email" placeholder="Email Address" [(ngModel)]="email"style="background:none;" class="form-control">
 						<i class="zmdi zmdi-email zmdi-hc-lg" style="color:#fff;"></i>
 					</div><br/>
 					<!--div class="form-wrapper">
@@ -71,6 +73,7 @@
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 				</form>
+				
 			</div>
 		</div>
 		
