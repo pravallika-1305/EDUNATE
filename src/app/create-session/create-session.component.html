@@ -28,20 +28,35 @@
                     <h2 class="title">CREATE A NEW SESSION</h2>
                     <form #userForm="ngForm" (ngSubmit)="onSave(userForm.value)" novalidate>
                         <div class="input-group">
-                            <input class="input--style-3" type="text"  placeholder="Topic Name" [(ngModel)]="topic" name="topic">
+                            <input ngModel class="input--style-3" type="text"  placeholder="Topic Name" [(ngModel)]="topic" name="topic" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && topic.errors?.required" >Please enter the topic of your</div>
+                            </div>
+        
                         </div>
 			<div class="input-group">
-                            <input class="input--style-3" type="text"  placeholder="Locality" [(ngModel)]="locality"  name="locality">
+                            <input ngModel class="input--style-3" type="text"  placeholder="Locality" [(ngModel)]="locality"  name="locality" required>
+                           
+        
 			    <i class="zmdi zmdi-pin input-icon"></i>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3 js-datepicker"  type="date" [min]="currentDate| date:'yyyy-MM-dd'"  [(ngModel)]="from_date" placeholder="Start Date" name="from_date">
+                            <input ngModel class="input--style-3 js-datepicker"  type="date" [min]="currentDate| date:'yyyy-MM-dd'"  [(ngModel)]="from_date" placeholder="Start Date" name="from_date" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && from_date.errors?.required" >Please enter the date of commencement.</div>
+                            </div>
+        
                             <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
                         </div>
 			<div class="input-group">
-                            <input class="input--style-3 js-datepicker"  type="date" [min]="from_date | date:'yyyy-MM-dd'" [(ngModel)]="to_date"  placeholder="End Date" name="to_date">
+                            <input ngModel class="input--style-3 js-datepicker"  type="date" [min]="from_date | date:'yyyy-MM-dd'" [(ngModel)]="to_date"  placeholder="End Date" name="to_date" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && to_date.errors?.required" >Please enter the date of conclusion.</div>
+                            </div>
+        
                             <!--i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i-->
                         </div>
+                        <input type="file" (change)="selectFile($event)"/>
                         <!--div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="gender">
@@ -55,20 +70,36 @@
                         </div-->
 			
 			<div class="input-group">
-                            <input class="input--style-3" type="time"  [(ngModel)]="time"  placeholder="Time" name="time">
+                            <input ngModel class="input--style-3" type="time"  [(ngModel)]="time"  placeholder="Time" name="time" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && time.errors?.required" >Please enter the time of your session</div>
+                            </div>
+        
                         </div>
 			<div class="input-group">
-                            <input class="input--style-3" style="height:100px;outline: solid #000;"  [(ngModel)]="description"  type="text" placeholder="Description" name="description">
+                            <input ngModel class="input--style-3" style="height:100px;outline: solid #000;"  [(ngModel)]="description"  type="text" placeholder="Description" name="description" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && description.errors?.required" >Please enter session description</div>
+                            </div>
+        
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="number"  [(ngModel)]="seats"  placeholder="Seats" name="seats">
+                            <input ngModel class="input--style-3" type="number"  [(ngModel)]="seats"  placeholder="Seats" name="seats" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && seats.errors?.required" >Please enter number of seats</div>
+                            </div>
+        
                         </div>
 			<a (click)="show()">Is your session online?</a><br/><br/>
                         <div class="input-group" *ngIf = "onlineshow">
-                            <input class="input--style-3" type="text" name="topic" [(ngModel)]="online"  placeholder="Room Name" name="online">
+                            <input ngModel class="input--style-3" type="text" [(ngModel)]="online" placeholder="Room Name" name="online" required>
+                            <div class = "text-danger">
+                                <div *ngIf="userForm.touched && online.errors?.required" >Please enter Online Room Name</div>
+                            </div>
+        
                         </div>
                         <div class="p-t-10">
-                            <button  value={{valbutton}} class="btn btn--pill btn--green" type="submit">Submit</button>
+                            <button  [disabled] = "!userForm.valid" value={{valbutton}} class="btn btn--pill btn--green" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

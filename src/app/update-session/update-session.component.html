@@ -28,6 +28,9 @@
                     <span class="contact100-form-title" style="color:black" >
                         Update Session 
                     </span>
+                    <label> <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>  Update Session Picture</label>
+                    <input type="file" (change)="selectFile($event)" [(ngModel)]="session.imageInput"/><br/>        
+                    
                     <label><i class="fa fa-2x fa-comment" aria-hidden="true"></i> &nbsp; Topic Name:</label>
                     <div class="wrap-input100 validate-input" data-validate="Please enter Topic Name">
                         <input class="input100" type="text" name="topic" [(ngModel)] ="session.topic"  placeholder="Topic Name">

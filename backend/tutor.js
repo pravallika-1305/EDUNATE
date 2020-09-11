@@ -42,6 +42,9 @@ var UsersSchema = new Schema({
   username: {
     type: String
   },
+  imageInput: {
+    type: String
+  },
   password: {
     type: String
   },
@@ -91,6 +94,7 @@ app.post("/api/UpdateUser", function (req, res) {
   model.findByIdAndUpdate(req.body.id, {
     fullname: req.body.fullname,
     username: req.body.username,
+    imageInput:req.body.imageInput,
     email:req.body.email,
     password: req.body.password,
     twitter: req.body.twitter,

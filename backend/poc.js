@@ -44,6 +44,9 @@ var UsersSchema = new Schema({
   password: {
     type: String
   },
+  imageInput: {
+    type: String
+  },
   email: {
     type: String
   },
@@ -92,6 +95,7 @@ app.post("/api/UpdateUser", function (req, res) {
     username: req.body.username,
     email:req.body.email,
     password: req.body.password,
+    imageInput:req.body.imageInput,
     organization:req.body.organization
   },
   function (err, data) {

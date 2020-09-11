@@ -63,6 +63,9 @@ seats:{
    time:{
     type:String
 },
+imageInput:{
+  type:String
+},
 
    
 }, {
@@ -94,6 +97,7 @@ app.post("/api/UpdateUser", function (req, res) {
     from_date: req.body.from_date,
     time: req.body.time,
     to_date:req.body.to_date,
+    imageInput:req.body.imageInput,
     description:req.body.description,
     locality:req.body.locality,
     online:req.body.online,

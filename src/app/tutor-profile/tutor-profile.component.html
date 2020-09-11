@@ -80,7 +80,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-              <img class="img-fluid" src="/assets/asset/img/about/about-1.jpg" alt="">
+              <img class="img-fluid" [src] = "'data:image/jpeg;base64,'+ Repdata.imageInput | safehtml"  />
             </div>
           </div> 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -110,7 +110,7 @@
     <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
     <div class="col-lg-3 course_box" *ngFor="let session of sessions | filter : term">
         <div class="card" >
-            <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+          <img class="card-img-top" [src] = "'data:image/jpeg;base64,'+ session.imageInput | safehtml"  />
             <div class="card-body text-center">
                 <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
                 <div class="card-text">{{session.description}}</div>

@@ -28,6 +28,8 @@
                     <span class="contact100-form-title" style="color:black" >
                         Update Your Profile 
                     </span>
+                    <label> <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>  Update Profile Picture</label>
+                    <input type="file" (change)="selectFile($event)" [(ngModel)]="Repdata.imageInput"/><br/> 
                     <label><i class="fa fa-2x fa-address-card-o" aria-hidden="true"></i>  Full Name:</label>
                     <div class="wrap-input100 validate-input" data-validate="Please enter your name">
                         <input class="input100" type="text" [(ngModel)]="Repdata.fullname" name="fullname" placeholder="Full Name">

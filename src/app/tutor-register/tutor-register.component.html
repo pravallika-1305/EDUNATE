@@ -26,20 +26,32 @@
 						<input type="text" placeholder="Last Name" class="form-control">
 					</div-->
 					<div class="form-wrapper">
-						<input type="text" id="fullname" name="fullname" placeholder="Fullname" [(ngModel)]="fullname" style="background:none;" class="form-control" required>
+						<input ngModel type="text" id="fullname" name="fullname" placeholder="Fullname" #fullname = "ngModel" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && fullname.errors?.required">Please enter Full Name</div>
+						</div>
+					</div><br/>
 						
-					</div>
 					
-<br/>
+					
+
 					<div class="form-wrapper">
-						<input type="text"  name = "username" placeholder="Username" [(ngModel)]="username"style="background:none;" class="form-control">
+						<input ngModel type="text"  name = "username" placeholder="Username" #username = "ngModel" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && username.errors?.required"  >Please enter Username</div>
+						</div>
 					</div><br/>
+
 					<div class="form-wrapper">
-						<input type="email"  name = "email" placeholder="Email Address" [(ngModel)]="email"style="background:none;" class="form-control">
+						<input ngModel type="email"  name = "email" placeholder="Email Address" #email = "ngModel"style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-email zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && email.errors?.required" >Please enter EMAIL ID</div>
+						</div>
 					</div><br/>
+						
 					<!--div class="form-wrapper">
 						<select name="" id="" class="form-control">
 							<option value="" disabled selected>Gender</option>
@@ -51,25 +63,32 @@
 					</div-->
 
 					<div class="form-wrapper">
-						<input type="password" name = "password"  placeholder="Password" [(ngModel)]="password" style="background:none;" class="form-control">
+						<input ngModel type="password" name = "password"  placeholder="Password" #password = "ngModel" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-lock zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+						<div *ngIf="userForm.touched && password.errors?.required" >Please enter password</div>
+					</div>
 					</div><br/>
+					<input type="file" (change)="selectFile($event)" />
 					<div class="form-wrapper">
-						<input type="text"  name = "linkedin" placeholder="Linkedin" [(ngModel)]="linkedin"style="background:none;" class="form-control">
+						<input ngModel type="text"  name = "linkedin" placeholder="Linkedin" #linkedin = "ngModel" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-linkedin zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && linkedin.errors?.required" >Please enter LinkedIn URL</div>
+						</div>
 					</div><br/>
 					<div class="form-wrapper">
-						<input type="text"  name = "twitter" placeholder="Twitter" [(ngModel)]="twitter" style="background:none;" class="form-control">
+						<input ngModel type="text"  name = "twitter" placeholder="Twitter" [(ngModel)]="twitter" style="background:none;" class="form-control" >
 						<i class="zmdi zmdi-twitter zmdi-hc-lg" style="color:#fff;"></i>
 					</div><br/>
 					<div class="form-wrapper">
 						
-						<input type="text" name = "blog" placeholder="Blog" [(ngModel)]="blog" style="background:none;" class="form-control">
-							<i class="zmdi zmdi-blogger zmdi-hc-lg" style="color:#fff;"></i>
+						<input ngModel type="text" name = "blog" placeholder="Blog" [(ngModel)]="blog" style="background:none;" class="form-control" required>
+							<i class="zmdi zmdi-blogger zmdi-hc-lg" style="color:rgb(247, 242, 242);"></i>
 						
 					</div>
 					
-					<button style="background:#fff;color:#333" value = "{{valbutton}}">Register
+					<button [disabled] = "!userForm.valid" style="background:#fff;color:#333" value = "{{valbutton}}">Register
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 				</form>

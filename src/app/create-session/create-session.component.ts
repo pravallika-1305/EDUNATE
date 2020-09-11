@@ -19,6 +19,7 @@ export class CreateSessionComponent implements OnInit {
   description:any;
   online:any;
   time:any;
+  base64textString: string;
   
   constructor(private newService: CommonService,private router: Router ) { }
   Repdata;
@@ -29,9 +30,31 @@ export class CreateSessionComponent implements OnInit {
   ngOnInit() {
     this.tutorname = this.newService.getobjectemail();
   }
+  
+  selectFile(event){
+    var files = event.target.files;
+    var file = files[0];
+
+  if (files && file) {
+      var reader = new FileReader();
+
+      reader.onload =this.handleFile.bind(this);
+
+      reader.readAsBinaryString(file);
+  }
+}
+
+
+
+handleFile(event) {
+   var binaryString = event.target.result;
+          this.base64textString= btoa(binaryString);
+          console.log(btoa(binaryString));
+  }
 
   onSave = function (user) {
     user.mode = this.valbutton;
+    user.imageInput = this.base64textString;
     user.tutorname = this.tutorname;
     console.log(user);
     this.newService.saveUser_session(user)

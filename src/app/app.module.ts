@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,6 +34,9 @@ import { AboutComponent } from './about/about.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { TutorListComponent } from './tutor-list/tutor-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { ChatService } from './chat.service';
+import { SafehtmlPipe } from './safehtml.pipe';
 
 
 
@@ -60,7 +63,8 @@ const appRoot: Routes = [
   {path: 'news',component:NewsComponent},
   {path: 'about',component:AboutComponent},
   {path: 'tutorList',component:TutorListComponent},
-  {path: 'coursesList',component:CoursesListComponent}
+  {path: 'coursesList',component:CoursesListComponent},
+  {path: 'chatbot',component:ChatbotComponent}
 ];
 
  /*
@@ -94,11 +98,14 @@ const appRoot: Routes = [
     NewsComponent,
     AboutComponent,
     CoursesListComponent,
-    TutorListComponent
+    TutorListComponent,
+    ChatbotComponent,
+    SafehtmlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
@@ -107,7 +114,7 @@ const appRoot: Routes = [
     BrowserAnimationsModule,
     MatCardModule
   ],
-  providers: [CommonService],
+  providers: [CommonService,ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

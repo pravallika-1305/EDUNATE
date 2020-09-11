@@ -24,12 +24,18 @@
 						<input type="text" placeholder="Last Name" class="form-control">
 					</div-->
 					<div class="form-wrapper">
-						<input type="text" placeholder="Username" name="username" [(ngModel)]="username" class="form-control" style = "background: none;">
+						<input ngModel #username = "ngModel" type="text" placeholder="Username" name="username" class="form-control" style = "background: none;" required>
 						<i class="zmdi zmdi-account zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && username.errors?.required" >Please enter username</div>
+						</div>
 					</div><br/>
 					<div class="form-wrapper">
-						<input type="email" placeholder="Email Address"  name="email" [(ngModel)]="email"class="form-control" style = "background: none;">
+						<input ngModel #email = "ngModel" type="email" placeholder="Email Address"  name="email" class="form-control" style = "background: none;" required>
 						<i class="zmdi zmdi-email zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && email.errors?.required" >Please enter email</div>
+						</div>
 					</div><br/>
 					<!--div class="form-wrapper">
 						<select name="" id="" class="form-control">
@@ -41,19 +47,25 @@
 						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
 					</div-->
 					<div class="form-wrapper">
-						<input type="text" placeholder="Organization Name"  name="organization" [(ngModel)]="organization" class="form-control" style = "background: none;">
+						<input ngModel #organization = "ngModel" type="text" placeholder="Organization Name"  name="organization"  class="form-control" style = "background: none;" required>
 						<i class="zmdi zmdi-library zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && organization.errors?.required" >Please enter your Organization</div>
+						</div>
 					</div><br/>
 					<div class="form-wrapper">
-						<input type="password" placeholder="Password"  name="password" [(ngModel)]="password" class="form-control" style = "background: none;">
+						<input ngModel #password = "ngModel" type="password" placeholder="Password"  name="password"  class="form-control" style = "background: none;" required>
 						<i class="zmdi zmdi-lock zmdi-hc-lg" style="color:#fff;"></i>
+						<div class = "text-danger">
+							<div *ngIf="userForm.touched && password.errors?.required" >Please enter password</div>
+						</div>
 					</div><br/>
-
+					<input type="file" (change)="selectFile($event)" />
 					<!--div class="form-wrapper">
 						<input type="password" placeholder="Confirm Password" class="form-control">
 						<i class="zmdi zmdi-lock"></i>
 					</div-->
-					<button style="background:#fff;color:#333" value={{valbutton}}>Register
+					<button [disabled] = "!userForm.valid" style="background:#fff;color:#333" value={{valbutton}}>Register
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 				</form>

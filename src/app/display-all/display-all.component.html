@@ -1,21 +1,7 @@
 <head>
     <!-- Required meta tags -->
-  <style>::-webkit-input-placeholder {
-    color: peachpuff;
-    font-size: 30px;
-  }
-  ::-moz-placeholder {
-    color: peachpuff;
-    font-size: 30px;
-  }
-  :-ms-input-placeholder {
-    color: peachpuff;
-    font-size: 30px;
-  }
-  ::placeholder {
-    color: peachpuff;
-    font-size: 30px;
-  }</style>
+
+
   
     <title>Profile</title>
   
@@ -96,7 +82,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
-              <img class="img-fluid" src="/assets/asset/img/about/about-1.jpg" alt="">
+              <img class="img-fluid" [src] = "'data:image/jpeg;base64,'+ Repdata.imageInput | safehtml"/>
             </div>
           </div> 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -117,23 +103,23 @@
     </div>
   </section>
 
-    <h2 style="color:#000;text-align:center;">Sessions</h2>
+    <h2 style="color:#000;text-align:center;">Search Sessions</h2><br/>
     
       <!--div class="search"-->
-      <div class="container">
-        <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Name"  [(ngModel)]="term" >
-
+      <div class="container" style="padding-left: 5%;">
+        <i style="color:rgb(22, 194, 247);"class="icon-search"></i>
+        <input class="form-control"  style="background-color: rgb(245, 183, 12);height:60px;font-size:20px;color: rgb(17, 17, 16);outline:blue;" placeholder="SEARCH COURSES HERE"  type="text" [(ngModel)]="term" >
       <!--input type="text" style="font-family: monospace;
       font-size: 20px;
       color: peru;"class="form-control" placeholder="Search Here" [(ngModel)]="term"-->
     </div>
-  <div>
     <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;">
     <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
         <div class="card" >
+          
             <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
             <div class="card-body text-center">
-                <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
+                <div class="card-title"><a href="#">{{session.topic}}</a></div>
                 <div class="card-text">{{session.description}}</div>
             </div>
             
