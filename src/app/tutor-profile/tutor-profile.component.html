@@ -109,9 +109,11 @@
     <h2 style="color:#000;text-align:center;">Your Sessions</h2>
     <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
     <div class="col-lg-3 course_box" *ngFor="let session of sessions | filter : term">
-        <div class="card" >
-          <img class="card-img-top" [src] = "'data:image/jpeg;base64,'+ session.imageInput | safehtml"  />
-            <div class="card-body text-center">
+        <div class="card" style="height:600px;">
+          
+          <img class="card-img-top"  style="height:200px;" [src] = "'data:image/jpeg;base64,'+ session.imageInput | safehtml"  />
+         
+          <div class="card-body text-center">
                 <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
                 <div class="card-text">{{session.description}}</div>
             </div>

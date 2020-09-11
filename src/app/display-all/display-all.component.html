@@ -115,12 +115,14 @@
     </div>
     <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;">
     <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
-        <div class="card" >
+        <div class="card"  style="height:650px;">
           
-            <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+            <img class="card-img-top" style="height:200px;"  src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
             <div class="card-body text-center">
                 <div class="card-title"><a href="#">{{session.topic}}</a></div>
-                <div class="card-text">{{session.description}}</div>
+                <div class="card-text">{{session.description}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> FROM: {{session.from_date}}</div><br/>
+               <div class="card-text" style="color:black;font-size:18px;font-weight: bold;">  TO: {{session.to_date}}</div><br/>
             </div>
             
                 <a (click)="AddtoCart(session)" class="btn btn-common btn-lg" style="width:100%"><i style="color:white;" class="icon-check"><span>&nbsp; Enroll</span></i></a>

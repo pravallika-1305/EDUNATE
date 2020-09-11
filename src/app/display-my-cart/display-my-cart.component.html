@@ -27,15 +27,21 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css'>
     <link rel="stylesheet" href="/assets/asset/style.css">
   </head>
-    
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>  
     <h2 style="color:#000;text-align:center;">Enrolled Sessions</h2>
     <div class="row course_boxes" style="margin-left:50px;margin-right: 50px;;">
     <div class="col-lg-4 course_box" *ngFor="let session of sessions | filter : term">
-        <div class="card">
-            <img class="card-img-top" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+        <div class="card" style="height:550px;">
+            <img class="card-img-top" style="height:200px;" src="/assets/img/course_1.jpg" alt="https://unsplash.com/@kellybrito">
             <div class="card-body text-center">
                 <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
-                <div class="card-text">{{session.description}}</div>
+                <div class="card-text">{{session.description}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> FROM: {{session.from_date}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> TO: {{session.to_date}}</div><br/>
                 <div style="display:none;">{{session.pocname}}</div>
             </div>
             

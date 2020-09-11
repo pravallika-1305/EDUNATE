@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/table/css/main.css">
 <!--===============================================================================================-->
 </head>
-<body style="background-color:rgb(19, 19, 18)">
+<body style="background-image: url('/assets/img/login.jpg');">
 <br/>
 <br/>
 <br/>
@@ -32,8 +32,8 @@
 					<table data-vertable="ver6" >
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Name</th>
-								<th class="column100 column2" data-column="column2">Email</th>
+								<th class="column100 column1" style="font-size:20px;" data-column="column1">Name</th>
+								<th class="column100 column2" style="font-size:20px;" data-column="column2">Email</th>
                                 <!--th class="column100 column3" data-column="column3"></th-->
                                 <!--th class="column100 column3" data-column="column3">Seats Booked</th-->
 								
@@ -41,8 +41,8 @@
 						</thead>
 						<tbody *ngFor="let kk of Repdata">
 							<tr class="row100" >
-								<td class="column100 column1" data-column="column1">{{kk.fullname}}</td>
-								<td class="column100 column2" data-column="column2">{{kk.email}}</td>
+								<td class="column100 column1" style="font-size:20px;" data-column="column1">{{kk.fullname}}</td>
+								<td class="column100 column2" style="font-size:20px;" data-column="column2">{{kk.email}}</td>
 								
 							</tr>
 

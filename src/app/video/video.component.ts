@@ -19,7 +19,7 @@ constructor(private newService:CommonService,private router: Router){}
   ngAfterViewInit(): void {
     this.options = {
       roomName:this.newService.getSessionDetails(),
-      width: 900,
+      width: 1000,
       height: 600,
       parentNode: document.querySelector('#meet')
     }

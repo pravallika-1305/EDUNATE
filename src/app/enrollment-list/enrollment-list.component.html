@@ -22,38 +22,44 @@
 	<link rel="stylesheet" type="text/css" href="/assets/table/css/main.css">
 <!--===============================================================================================-->
 </head>
-<body style="background-color:rgb(19, 19, 18)">
+<body style="background-image: url('/assets/img/login.jpg');">
 <br/>
 <br/>
 <br/>
 <br/>
-<div style="padding-left: 250px;">
+<br/>
+
+<div style="padding-left: 630px;">
 <button  [disabled]="buttonDisable"  (click)="showLink()" class="btn custom btn-warning" >Generate Link</button>
 </div>
 
-
-<div style="padding-left: 250px;" *ngIf = "show">
-	<textarea style="width:200px;">{{url}}</textarea>
-	<button  [disabled]="buttonDisable"  (click)="send()" class="btn btn-lg btn-warning" >Send</button>
+<br/>
+<br/>
+<div style="padding-left: 630px;" *ngIf = "show">
+	<textarea style="width:250px;background-color: black;color:cornsilk;">{{url}}</textarea>
+	<br/>
+	<div class="container" style="padding-left: 50px;">
+	<button  [disabled]="buttonDisable"  (click)="send()"  class="btn btn-lg btn-warning" >Send</button>
 	</div>
+</div>
 <br/>
 <div class="container" style="width:1000px;">
 				<div class="table100 ver6 m-b-110">
 					<table data-vertable="ver6" >
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Name</th>
-								<th class="column100 column2" data-column="column2">Email</th>
-								<th class="column100 column3" data-column="column3">Seats Booked</th>
+								<th class="column100 column1" style="font-size:20px;" data-column="column1">Name</th>
+								<th class="column100 column2"  style="font-size:20px;"  data-column="column2">Email</th>
+								<th class="column100 column3"  style="font-size:20px;width:auto;"  data-column="column3">Seats Booked</th>
 								
 							</tr>
 						</thead>
 						<tbody *ngFor="let session of sessions | filter : term">
 							<tr class="row100" >
-								<td class="column100 column1" data-column="column1">{{session.pocname}}</td>
-								<td class="column100 column2" data-column="column2">{{session.email}}</td>
-								<td class="column100 column3" data-column="column3">{{session.seats}}</td>
-								<div class="container" style="display:none;">{{session.orderedby}}</div>
+								<td class="column100 column1"  style="font-size:20px;" data-column="column1">{{session.pocname}}</td>
+								<td class="column100 column2"  style="font-size:20px;" data-column="column2">{{session.email}}</td>
+								<td class="column100 column3"  style="font-size:20px;"  data-column="column3">{{session.seats}}</td>
+								<div class="container"  style="font-size:20px;"  style="display:none;">{{session.orderedby}}</div>
 							</tr>
 
 						</tbody>

@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/table/css/main.css">
 <!--===============================================================================================-->
 </head>
-<body style="background-color:rgb(19, 19, 18)">
+<body style="background-image: url('/assets/img/login.jpg');">
 <br/>
 <br/>
 <br/>
@@ -32,19 +32,19 @@
 					<table data-vertable="ver6" >
 						<thead>
 							<tr class="row100 head">
-								<th class="column100 column1" data-column="column1">Name</th>
-                                <th class="column100 column2" data-column="column2">Started On</th>
-                                <th class="column100 column2" data-column="column2">Ends On</th>
-								<th class="column100 column3" data-column="column3">Seats Booked</th>
+								<th class="column100 column1" style="font-size:20px;" data-column="column1">Name</th>
+                                <th class="column100 column2" style="font-size:20px;" data-column="column2">Started On</th>
+                                <th class="column100 column2" style="font-size:20px;" data-column="column2">Ends On</th>
+								<th class="column100 column3" style="font-size:20px;width:auto;" data-column="column3">Seats Booked</th>
 								
 							</tr>
 						</thead>
 						<tbody *ngFor="let session of Repdata">
 							<tr class="row100" >
-								<td class="column100 column1" data-column="column1">{{session.topic}}</td>
-								<td class="column100 column2" data-column="column2">{{session.from_date}}</td>
-								<td class="column100 column3" data-column="column3">{{session.to_date}}</td>
-								<td class="column100 column3" data-column="column3">{{session.seats}}</td>
+								<td class="column100 column1" style="font-size:20px;" data-column="column1">{{session.topic}}</td>
+								<td class="column100 column2" style="font-size:20px;" data-column="column2">{{session.from_date}}</td>
+								<td class="column100 column3" style="font-size:20px;" data-column="column3">{{session.to_date}}</td>
+								<td class="column100 column3" style="font-size:20px;" data-column="column3">{{session.seats}}</td>
 								<!--div class="container" style="display:none;">{{session.seats}}</div-->
 							</tr>
 
