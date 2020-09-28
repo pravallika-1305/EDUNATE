@@ -69,21 +69,21 @@
 						<div *ngIf="userForm.touched && password.errors?.required" >Please enter password</div>
 					</div>
 					</div><br/>
-					<input type="file" (change)="selectFile($event)" />
+					<input type="file" (change)="selectFile($event)" /><br/>
 					<div class="form-wrapper">
-						<input ngModel type="text"  name = "linkedin" placeholder="Linkedin" #linkedin = "ngModel" style="background:none;" class="form-control" required>
+						<input type="text"  name = "linkedin" placeholder="Linkedin" [(ngModel)]="linkedin" style="background:none;" class="form-control" required>
 						<i class="zmdi zmdi-linkedin zmdi-hc-lg" style="color:#fff;"></i>
-						<div class = "text-danger">
+						<!--div class = "text-danger">
 							<div *ngIf="userForm.touched && linkedin.errors?.required" >Please enter LinkedIn URL</div>
-						</div>
+						</div-->
 					</div><br/>
 					<div class="form-wrapper">
-						<input ngModel type="text"  name = "twitter" placeholder="Twitter" [(ngModel)]="twitter" style="background:none;" class="form-control" >
+						<input type="text"  name = "twitter" placeholder="Twitter" [(ngModel)]="twitter" style="background:none;" class="form-control" >
 						<i class="zmdi zmdi-twitter zmdi-hc-lg" style="color:#fff;"></i>
 					</div><br/>
 					<div class="form-wrapper">
 						
-						<input ngModel type="text" name = "blog" placeholder="Blog" [(ngModel)]="blog" style="background:none;" class="form-control" required>
+						<input type="text" name = "blog" placeholder="Blog" [(ngModel)]="blog" style="background:none;" class="form-control" required>
 							<i class="zmdi zmdi-blogger zmdi-hc-lg" style="color:rgb(247, 242, 242);"></i>
 						
 					</div>

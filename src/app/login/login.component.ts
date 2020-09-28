@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
     this.newService.GetUser_poc().subscribe(data => this.Repdata1 = data);
     this.newService.setLoginnavbar();
   }
-  login(){
+  login(user){
+    this.email = user.email;
+    this.password = user.password;
     var count = 0;
     var count1 = 0;
     var count2  = 0;

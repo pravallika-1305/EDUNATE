@@ -87,8 +87,8 @@
             <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">            
               <div class="about-profile">
                 <ul class="admin-profile">
-                  <li><span class="pro-title" > Name </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.fullname}}</span></li>
-                  <li><span class="pro-title"> Username </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.username}}</span></li>
+                  <li><span class="pro-title" > Name </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.fullname}}</span></li><br/>
+                  <li><span class="pro-title"> Username </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.username}}</span></li><br/>
                   <li><span class="pro-title"> Email </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.email}}</span></li>
                   <!--li><span class="pro-title"> Country </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.fullname}}</span></li>
                   <li><span class="pro-title"> Location </span> <span class="pro-detail" style="font-size:25px;">{{Repdata.fullname}}</span></li>
@@ -114,8 +114,12 @@
           <img class="card-img-top"  style="height:200px;" [src] = "'data:image/jpeg;base64,'+ session.imageInput | safehtml"  />
          
           <div class="card-body text-center">
-                <div class="card-title"><a href="courses.html">{{session.topic}}</a></div>
-                <div class="card-text">{{session.description}}</div>
+                <div class="card-title" style="color:black;font-size:18px;font-weight: bold;">{{session.topic}}</div>
+                <div class="card-text">{{session.description}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> FROM: {{session.from_date}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> TO: {{session.to_date}}</div><br/>
+                <div class="card-text" style="color:black;font-size:18px;font-weight: bold;"> LOCALITY: {{session.locality}}</div><br/>
+                
             </div>
             <div class = "container">
                 <a (click)="update(session)" class="btn btn-common btn-lg" style="width:31.3%"><i class="icon-pencil"></i></a>&nbsp;

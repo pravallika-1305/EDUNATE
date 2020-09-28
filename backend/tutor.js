@@ -2,6 +2,7 @@ var express = require('express');
 var path = require("path");
 var bodyParser = require('body-parser');
 var mongo = require("mongoose");
+const { encrypt, decrypt } = require('./crypto');
 //Replace the link below by mLab link
 var db = mongo.connect("mongodb://localhost:27017/Edunate", function (err, response) {
   if (err) {
@@ -40,7 +41,8 @@ var UsersSchema = new Schema({
     type: String
   },
   username: {
-    type: String
+    type: String,
+    unique:true
   },
   imageInput: {
     type: String
@@ -71,19 +73,23 @@ app.post("/api/SaveUser", function (req, res) {
   var mod = new model(req.body);
   model.findOne({email:req.body.email}, function (err, data) {
     if (err) {
-      res.send(err);
+      res.send({
+        data: "Username already exists"
+      });
     }
     else if (data){
       res.send({
-        data: "Record is there already"
+        data: "You have already registered."
       });
     } else {
       mod.save(function (err, data) {
         if (err) {
-          res.send(err);
+          res.send({
+            data: "Username already exists"
+          });
         } else {
           res.send({
-            data: "Record has been Inserted..!!"
+            data: "Registered successfully!"
           });
         }
       });
@@ -106,7 +112,7 @@ app.post("/api/UpdateUser", function (req, res) {
       res.send(err);
     } else {
       res.send({
-        data: "Record has been Updated..!!"
+        data: "Your profile has been updated!"
       });
     }
   });

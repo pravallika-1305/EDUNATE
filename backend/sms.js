@@ -15,7 +15,7 @@ app.post("/sendSMS", async function (req, res) {
     console.log("request received");
     let user = req.body;
     const message = user.message;
-    var url = 'https://api.textlocal.in/send/?apikey=thhBMyhJQJI-aToi5XOJL8gsERQGTturhwxwZyijL9&numbers=' + `${user.phone}` + '&sender=TXTLCL&message=' + encodeURIComponent(message);
+    var url = 'https://api.textlocal.in/send/?apikey=j77uksRT378-qTeTZQefKHXSeo8RtpBIwIkWfwIQCi&numbers=' + `${user.phone}` + '&sender=TXTLCL&message=' + encodeURIComponent(message);
     axios
         .get(url)
         .then(function (response) {

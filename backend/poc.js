@@ -65,22 +65,22 @@ app.post("/api/SaveUser", function (req, res) {
   model.findOne({email:req.body.email}, function (err, data) {
     if (err) {
       res.send({
-        data: "Name is there already"
+        data: "Username already exists."
       });
     }
     else if (data){
       res.send({
-        data: "Record is there already"
+        data: "You already have an account"
       });
     } else {
       mod.save(function (err, data) {
         if (err) {
           res.send({
-            data: "Name is there already"
+            data: "Username already exists."
           });
         } else {
           res.send({
-            data: "Record has been Inserted..!!"
+            data: "Registered successfully!"
           });
         }
       });
@@ -103,7 +103,7 @@ app.post("/api/UpdateUser", function (req, res) {
       res.send(err);
     } else {
       res.send({
-        data: "Record has been Updated..!!"
+        data: "Your profile has been updated!"
       });
     }
   });

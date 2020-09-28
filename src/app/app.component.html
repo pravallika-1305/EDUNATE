@@ -77,7 +77,7 @@
             
             
             <li class="main_nav_item"><a style = "color:white;" (click) = "navigateContact()">Contact Us</a></li>
-            <li class="main_nav_item"><a style = "color:white;" href="#">About Us</a></li>
+            <li class="main_nav_item"><a style = "color:white;" (click) = "navigateAbout()">About Us</a></li>
             <li class="main_nav_item"><a style = "color:white;"  (click) = "navigateTutorProfile()">Profile</a></li>
             <li class="main_nav_item"><a style = "color:white;" (click) = "navigateLogout()">Logout</a></li>
             <!--router-outlet></router-outlet-->
@@ -118,9 +118,9 @@
                 <nav class="main_nav_container">
                     <div class="main_nav">
                         <ul class="main_nav_list">
-                            <li class="main_nav_item"><a style = "color:white;" href="#">Home</a></li>
+                            <li class="main_nav_item"><a style = "color:white;" (click)="navigateHome()">Home</a></li>
                 
-                <li class="main_nav_item"><a style = "color:white;"href="#">About Us</a></li>
+                <li class="main_nav_item"><a style = "color:white;" (click) = "navigateAbout()">About Us</a></li>
                 <li class="main_nav_item"><a style = "color:white;" (click) = "navigateContact()">Contact Us</a></li>
                 <li class="main_nav_item"><a style = "color:white;" (click) = "navigateEnrolledSessions()">Your Sessions</a></li>
                 <li class="main_nav_item"><a style = "color:white;" (click) = "navigateSearch()">Search</a></li>
