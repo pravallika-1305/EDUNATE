@@ -1,0 +1,301 @@
+% LaTeX-Folienvorlage erstellt von Mathias Magdowski (mathias.magdowski@ovgu.de)
+% veröffentlicht unter Creative-Commons-Lizenz mit Namensnennung und Weitergabe unter gleichen Bedingungen 4.0 International (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/deed.de)
+% basierend auf der PowerPoint-Vorlage von http://bit.ly/ppt-digiPH (Stand: Anfang April 2018)
+
+% Beamer-Klasse
+\documentclass{beamer}
+
+% Pakete laden
+\input{pakete}
+
+% Stil der Online-Tagung "Hochschule digital.innovativ" der Virtuellen Pädagogischen Hochschule
+\usepackage{beamer_digiPH}
+\usepackage{authblk}
+\title{BVRIT Hyderabad College of Engineering for Women}
+
+
+\mode<presentation>{\keywords{Schlüsselwörter durch Komma getrennt}}
+\date[09.04.2018]{Datum der Präsentation, \zB 9. April 2018}
+\usepackage{authblk}
+\begin{document}
+
+\begin{withoutheadline}
+
+
+\begin{frame}
+	\maketitle
+	
+	% \maketitle funktioniert auch im Article-Modus
+	% \titlepage funktioniert nur bei Präsentationen
+\end{frame}
+\end{withoutheadline}
+
+%\miniframesoff
+\begin{frame}	\begin{center}
+		\Huge
+About EDUNATE
+	\end{center}
+\end{frame}
+%\miniframeson
+
+\begin{frame}{TechStack}
+	\begin{center}
+		\Huge
+MEANSTACK
+	\end{center}
+	 {\includegraphics[width=0.99\textwidth]{meanstack}};
+
+
+
+\end{frame}
+
+
+\begin{frame}{Why MEANSTACK?}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=6cm]{chamaeleon_hochformat}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Features and API's}
+	
+	\begin{center}
+	
+
+\begin{itemize}
+\item Contact form
+\item Maps
+\item Chat-bot
+\item News API 
+\item Image upload
+\end{itemize}
+
+\columnbreak
+
+
+\begin{itemize}
+\item Message sending
+\item Certificate Download
+\item Video call
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=7cm]{message}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=5cm]{video}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=5cm]{certificate}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=5cm]{news}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=5cm]{maps}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Our features look like ...}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=5cm]{chatbot}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Hurdles faced \ldots}
+	\framesubtitle{}
+	\begin{center}
+		\begin{tikzpicture}
+			\node[anchor=south west,inner sep=0] (bild) at (0,0) {\includegraphics[width=0.99\textwidth]{smartphone}};
+			\begin{scope}[x=(bild.south east),y=(bild.north west)]
+				% Gitternetz einzeichnen
+				%\draw[help lines] (0,0) grid[xstep=0.1,ystep=0.1] (1,1);
+				% Text einfügen
+				\node[font=\scriptsize,align=left,color=white,text width=4cm] (text) at (0.79,0.3) {Bitte verwenden Sie ausschließlich urheberrechts-einwandfreies Bildmaterial (NoGo: Schulbücher!)\\
+				Am besten also: eigenes und/oder CC-Bildmaterial, \zB von \url{www.pixabay.com} oder ähnlichen Plattformen!\\
+				Bitte nie eine sichtbare Bildquelle und Lizenz vergessen.};
+			\end{scope}
+		\end{tikzpicture}
+		
+			\end{center}
+\end{frame}
+\begin{frame}	\begin{center}
+		\Huge
+Find us at \color{blue} \url{https://github.com/pravallika-1305/EDUNATE}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Lets have a look!!}
+	\begin{columns}
+		\begin{column}{5cm}
+			\small 
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[height=3cm]{details_foto_xy2}
+				
+				
+			\end{center}
+		\end{column}
+	\end{columns}
+	\begin{columns}
+		\begin{column}{5cm}
+			\begin{center}
+				\includegraphics[width=5cm]{details_foto_xy1}
+				
+				
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{block}{\small }
+				\scriptsize
+				
+			\end{block}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Our Team}
+	\begin{columns}
+		\begin{column}{0.25cm}
+			\begin{center}
+				\includegraphics[scale = 0.5,width=8cm,height=8cm]{ourteam1}
+				
+				{\tiny \textcolor{digiPH_darkorange}{ }}
+			\end{center}
+		\end{column}
+		\begin{column}{5cm}
+			\begin{center}
+				\Large{}
+			
+			\end{center}
+			
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\end{document}
